@@ -1,0 +1,166 @@
+.howto-view {
+    padding-bottom: var(--spacing-xl);
+}
+
+.howto-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto 8px;
+}
+
+.howto-header h2 {
+    margin-bottom: 4px;
+}
+
+.howto-header p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.basic-method-card {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    /* Assuming black/dark grey text on yellow */
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.basic-method-card h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.method-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.method-steps li {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.step-num {
+    background-color: var(--color-text);
+    /* Dark circle */
+    color: var(--color-background);
+    /* White text */
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.step-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.section-title {
+    margin-bottom: var(--spacing-md);
+}
+
+.consistency-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.guide-card {
+    background: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: 4px;
+}
+
+.guide-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+
+.guide-header h4 {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.guide-time {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.guide-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-left: 20px;
+    /* Align with text start */
+}
+
+/* Pro Tips Styles */
+.protips-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.protip-card {
+    display: flex;
+    gap: var(--spacing-md);
+    background: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    align-items: flex-start;
+}
+
+.protip-icon {
+    font-size: 1.5rem;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.protip-content h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.protip-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+}
