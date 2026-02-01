@@ -12,6 +12,11 @@ function App() {
   const [theme, setTheme] = useState<Theme>('system');
   const [adjustments, setAdjustments] = useState<CustomAdjustmentMap>({});
 
+  // Notification Settings
+  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [vibrationEnabled, setVibrationEnabled] = useState(true);
+
   // Helper to get adjustment for a specific combo
   const getAdjustment = useCallback((key: string) => {
     return adjustments[key] || 0;
@@ -42,6 +47,9 @@ function App() {
           <TimerView
             getAdjustment={getAdjustment}
             onAdjustmentChange={handleAdjustmentChange}
+            notificationsEnabled={notificationsEnabled}
+            soundEnabled={soundEnabled}
+            vibrationEnabled={vibrationEnabled}
           />
         );
       case 'recipe':
@@ -56,6 +64,12 @@ function App() {
             adjustments={adjustments}
             onAdjustmentChange={handleAdjustmentChange}
             onResetAdjustments={() => setAdjustments({})}
+            notificationsEnabled={notificationsEnabled}
+            onNotificationsToggle={setNotificationsEnabled}
+            soundEnabled={soundEnabled}
+            onSoundToggle={setSoundEnabled}
+            vibrationEnabled={vibrationEnabled}
+            onVibrationToggle={setVibrationEnabled}
           />
         );
       default:
@@ -63,6 +77,9 @@ function App() {
           <TimerView
             getAdjustment={getAdjustment}
             onAdjustmentChange={handleAdjustmentChange}
+            notificationsEnabled={notificationsEnabled}
+            soundEnabled={soundEnabled}
+            vibrationEnabled={vibrationEnabled}
           />
         );
     }

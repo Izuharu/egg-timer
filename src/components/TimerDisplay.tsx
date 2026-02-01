@@ -37,6 +37,7 @@ export const TimerDisplay: React.FC<TimerDisplayProps> = ({ remainingSeconds, to
                     <circle
                         stroke="var(--color-surface)"
                         strokeWidth={stroke}
+                        strokeOpacity="0.2"
                         fill="transparent"
                         r={normalizedRadius}
                         cx={radius}
@@ -44,7 +45,7 @@ export const TimerDisplay: React.FC<TimerDisplayProps> = ({ remainingSeconds, to
                     />
                     <circle
                         stroke="var(--color-primary)"
-                        strokeWidth={stroke}
+                        strokeWidth={stroke + 2}
                         strokeDasharray={circumference + ' ' + circumference}
                         style={{ strokeDashoffset }}
                         strokeLinecap="round"
@@ -55,8 +56,24 @@ export const TimerDisplay: React.FC<TimerDisplayProps> = ({ remainingSeconds, to
                         className="timer-progress"
                     />
                 </svg>
-                <div className="timer-text">
-                    {formatTime(remainingSeconds)}
+                <div className="timer-content-overlay">
+                    <div className="timer-text">
+                        {formatTime(remainingSeconds)}
+                    </div>
+                    <div className="timer-label">TIME REMAINING</div>
+                </div>
+            </div>
+
+            <div className="cooking-progress-container">
+                <div className="progress-header">
+                    <span className="progress-label">COOKING PROGRESS</span>
+                    <span className="progress-percentage">{Math.round(progress)}%</span>
+                </div>
+                <div className="linear-progress-track">
+                    <div
+                        className="linear-progress-bar"
+                        style={{ width: `${progress}%` }}
+                    ></div>
                 </div>
             </div>
         </div>

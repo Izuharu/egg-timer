@@ -10,6 +10,12 @@ interface SettingsViewProps {
     adjustments: CustomAdjustmentMap;
     onAdjustmentChange: (key: string, val: number) => void;
     onResetAdjustments: () => void;
+    notificationsEnabled: boolean;
+    onNotificationsToggle: (val: boolean) => void;
+    soundEnabled: boolean;
+    onSoundToggle: (val: boolean) => void;
+    vibrationEnabled: boolean;
+    onVibrationToggle: (val: boolean) => void;
 }
 
 export const SettingsView: React.FC<SettingsViewProps> = ({
@@ -17,12 +23,15 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
     onThemeChange,
     adjustments,
     onAdjustmentChange,
-    onResetAdjustments
+    onResetAdjustments,
+    notificationsEnabled,
+    onNotificationsToggle,
+    soundEnabled,
+    onSoundToggle,
+    vibrationEnabled,
+    onVibrationToggle
 }) => {
     const [activeTimingTab, setActiveTimingTab] = useState<EggType>('chicken');
-    const [notificationsEnabled, setNotificationsEnabled] = useState(true);
-    const [soundEnabled, setSoundEnabled] = useState(true);
-    const [vibrationEnabled, setVibrationEnabled] = useState(true);
 
     const getAdjValue = (type: string, size: string, consistency: string) => {
         return adjustments[`${type}-${size}-${consistency}`] || 0;
@@ -70,7 +79,17 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                         </div>
                     </div>
                     <label className="toggle-switch">
-                        <input type="checkbox" checked={notificationsEnabled} onChange={(e) => setNotificationsEnabled(e.target.checked)} />
+                        <input
+                            type="checkbox"
+                            checked={notificationsEnabled}
+                            onChange={(e) => {
+                                const val = e.target.checked;
+                                onNotificationsToggle(val);
+                                if (val && 'Notification' in window && Notification.permission === 'default') {
+                                    Notification.requestPermission();
+                                }
+                            }}
+                        />
                         <span className="slider"></span>
                     </label>
                 </div>
@@ -83,7 +102,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                         </div>
                     </div>
                     <label className="toggle-switch">
-                        <input type="checkbox" checked={soundEnabled} onChange={(e) => setSoundEnabled(e.target.checked)} />
+                        <input type="checkbox" checked={soundEnabled} onChange={(e) => onSoundToggle(e.target.checked)} />
                         <span className="slider"></span>
                     </label>
                 </div>
@@ -96,7 +115,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                         </div>
                     </div>
                     <label className="toggle-switch">
-                        <input type="checkbox" checked={vibrationEnabled} onChange={(e) => setVibrationEnabled(e.target.checked)} />
+                        <input type="checkbox" checked={vibrationEnabled} onChange={(e) => onVibrationToggle(e.target.checked)} />
                         <span className="slider"></span>
                     </label>
                 </div>

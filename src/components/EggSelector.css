@@ -72,6 +72,11 @@
     /* Full fill */
 }
 
+.consistency-btn.selected .consistency-label,
+.consistency-btn.selected .consistency-desc {
+    color: #121212 !important;
+}
+
 .consistency-label {
     font-weight: 700;
     margin-bottom: 4px;

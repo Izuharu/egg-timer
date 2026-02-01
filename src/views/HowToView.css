@@ -32,11 +32,22 @@
 
 .basic-method-card {
     background-color: var(--color-primary);
-    color: var(--color-text);
-    /* Assuming black/dark grey text on yellow */
+    color: #121212;
+    /* Dark text for yellow background */
     padding: var(--spacing-lg);
     border-radius: 16px;
     margin-bottom: var(--spacing-xl);
+}
+
+.basic-method-card p,
+.basic-method-card h3,
+.basic-method-card .step-text {
+    color: #121212 !important;
+}
+
+.method-steps li .step-num {
+    background-color: #121212;
+    color: var(--color-primary);
 }
 
 .basic-method-card h3 {
