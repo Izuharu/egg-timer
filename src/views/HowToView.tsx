@@ -17,18 +17,18 @@ const CONSISTENCY_GUIDE = [
 ];
 
 const PRO_TIPS = [
-    { icon: "🌡️", title: "Start with Room Temperature Eggs", desc: "Take eggs out of the fridge 10-15 minutes before boiling to prevent cracking." },
-    { icon: "💧", title: "Use Enough Water", desc: "Ensure eggs are covered by at least 1 inch of water for even cooking." },
-    { icon: "⏱️", title: "Timing is Everything", desc: "Start your timer as soon as eggs hit the boiling water for consistent results." },
-    { icon: "❄️", title: "Ice Bath is Crucial", desc: "Immediately transfer eggs to ice water to stop cooking and make peeling easier." },
-    { icon: "🥣", title: "Easy Peeling Trick", desc: "For easier peeling, use eggs that are at least 7-10 days old. Fresh eggs are harder to peel." }
+    { icon: "device_thermostat", title: "Start with Room Temperature Eggs", desc: "Take eggs out of the fridge 10-15 minutes before boiling to prevent cracking." },
+    { icon: "water_drop", title: "Use Enough Water", desc: "Ensure eggs are covered by at least 1 inch of water for even cooking." },
+    { icon: "timer", title: "Timing is Everything", desc: "Start your timer as soon as eggs hit the boiling water for consistent results." },
+    { icon: "ac_unit", title: "Ice Bath is Crucial", desc: "Immediately transfer eggs to ice water to stop cooking and make peeling easier." },
+    { icon: "egg", title: "Easy Peeling Trick", desc: "For easier peeling, use eggs that are at least 7-10 days old. Fresh eggs are harder to peel." }
 ];
 
 export const HowToView: React.FC = () => {
     return (
         <div className="view-container howto-view">
             <div className="howto-header">
-                <div className="info-icon">i</div>
+                <div className="info-icon material-symbols-rounded">info</div>
                 <h2>How to Boil Eggs</h2>
                 <p>Master the art of perfect boiled eggs</p>
             </div>
@@ -63,7 +63,7 @@ export const HowToView: React.FC = () => {
             <div className="protips-list">
                 {PRO_TIPS.map((tip, i) => (
                     <div key={i} className="protip-card">
-                        <div className="protip-icon">{tip.icon}</div>
+                        <div className="protip-icon material-symbols-rounded">{tip.icon}</div>
                         <div className="protip-content">
                             <h4>{tip.title}</h4>
                             <p>{tip.desc}</p>

@@ -88,7 +88,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <span>🥚</span>
+        <img src="/favicon.svg" alt="Egg Timer Logo" width="28" height="28" />
         <h1>Egg Timer</h1>
       </header>
       <main className="app-content">

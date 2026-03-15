@@ -125,14 +125,14 @@ export const TimerView: React.FC<TimerViewProps> = ({
                         onClick={resetTimer}
                         disabled={!isActive && remainingTime === totalTime}
                     >
-                        <span className="icon">↺</span> Reset
+                        <span className="icon material-symbols-rounded">restart_alt</span> Reset
                     </button>
                     <button
                         className={`btn-control pause ${isActive ? 'active' : ''}`}
                         onClick={toggleTimer}
                         disabled={remainingTime === 0}
                     >
-                        <span className="icon">{isActive ? '⏸' : '▶'}</span> {isActive ? 'Pause' : 'Resume'}
+                        <span className="icon material-symbols-rounded">{isActive ? 'pause' : 'play_arrow'}</span> {isActive ? 'Pause' : 'Resume'}
                     </button>
                 </div>
 

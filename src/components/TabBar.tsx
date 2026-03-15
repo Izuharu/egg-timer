@@ -8,10 +8,10 @@ interface TabBarProps {
 
 export const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
     const tabs = [
-        { id: 'timer', label: 'Timer', icon: '⏱️' },
-        { id: 'recipe', label: 'Recipe', icon: '🍳' },
-        { id: 'howto', label: 'How To?', icon: '🤔' },
-        { id: 'settings', label: 'Setting', icon: '⚙️' },
+        { id: 'timer', label: 'Timer', icon: 'timer' },
+        { id: 'recipe', label: 'Recipe', icon: 'restaurant_menu' },
+        { id: 'howto', label: 'How To?', icon: 'help' },
+        { id: 'settings', label: 'Setting', icon: 'settings' },
     ];
 
     return (
@@ -22,7 +22,7 @@ export const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
                     className={`tab-item ${activeTab === tab.id ? 'active' : ''}`}
                     onClick={() => onTabChange(tab.id)}
                 >
-                    <span className="tab-icon">{tab.icon}</span>
+                    <span className="tab-icon material-symbols-rounded">{tab.icon}</span>
                     <span className="tab-label">{tab.label}</span>
                 </button>
             ))}

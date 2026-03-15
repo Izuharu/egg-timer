@@ -72,7 +72,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 <h3>Notifications</h3>
                 <div className="setting-row">
                     <div className="setting-info">
-                        <span className="setting-icon">🔔</span>
+                        <span className="setting-icon material-symbols-rounded">notifications</span>
                         <div>
                             <h4>Enable Notifications</h4>
                             <p>Get alerted when timer completes</p>
@@ -95,7 +95,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 </div>
                 <div className="setting-row">
                     <div className="setting-info">
-                        <span className="setting-icon">🔊</span>
+                        <span className="setting-icon material-symbols-rounded">volume_up</span>
                         <div>
                             <h4>Sound</h4>
                             <p>Play sound when timer ends</p>
@@ -108,7 +108,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 </div>
                 <div className="setting-row">
                     <div className="setting-info">
-                        <span className="setting-icon">📳</span>
+                        <span className="setting-icon material-symbols-rounded">vibration</span>
                         <div>
                             <h4>Vibration</h4>
                             <p>Vibrate on timer completion</p>
@@ -126,7 +126,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 <div className="section-header-row">
                     <h3>Custom Timings</h3>
                     <button className="reset-pill-btn" onClick={onResetAdjustments}>
-                        🔄 Reset All
+                        <span className="material-symbols-rounded icon-align">restart_alt</span> Reset All
                     </button>
                 </div>
 
@@ -165,7 +165,12 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
             <section className="settings-section">
                 <h3>About</h3>
-                <p className="app-version">Egg Timer v1.0.1</p>
+                <p className="app-version">Egg Timer v1.1.0</p>
+                <div className="about-footer">
+                    <p>Email: <a href="mailto:vangart.my@gmail.com">vangart.my@gmail.com</a></p>
+                    <p>Telegram: <a href="https://t.me/vangartmy" target="_blank" rel="noopener noreferrer">https://t.me/vangartmy</a></p>
+                    <p>© 2026 Egg Timer. Build by Vangart Lab.</p>
+                </div>
             </section>
         </div>
     );
